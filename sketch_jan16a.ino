@@ -95,7 +95,7 @@ char server[50] = "";
 char aws_endpoint[]    = "";
 char aws_key[]         = "";
 char aws_secret[]      = "";
-char aws_region[]      = "us-east-2";
+char aws_region[]      = "";
 const char* aws_topic  = "";
 int port = 443;
 
@@ -297,8 +297,8 @@ while (!Serial); // for Leonardo/Micro/Zero
    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
     //rtc.adjust(DateTime(2020, 1, 17, 3, 20, 20)); 
   
-WiFiManagerParameter custom_ts_token("ts", "AKIA45IPCKAKD3J7OKID", auth, 33);
-WiFiManagerParameter custom_server("serv", "a2geapajmwonm2-ats.iot.us-east-2.amazonaws.com", server, 50);
+WiFiManagerParameter custom_ts_token("ts", "", auth, 33);
+WiFiManagerParameter custom_server("serv", "", server, 50);
 
 
 WiFiManager wifiManager;
