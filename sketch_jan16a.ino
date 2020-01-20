@@ -295,7 +295,7 @@ while (!Serial); // for Leonardo/Micro/Zero
     Serial.println("RTC lost power, lets set the time!");
     // following line sets the RTC to the date & time this sketch was compiled
    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-    //rtc.adjust(DateTime(2020, 1, 17, 3, 20, 20)); 
+    //rtc.adjust(DateTime(2020, 1, 20), (5, 00, 00)); 
   
 WiFiManagerParameter custom_ts_token("ts", "", auth, 33);
 WiFiManagerParameter custom_server("serv", "", server, 50);
