@@ -73,13 +73,19 @@ void loop()
     DateTime now = rtc.now();  
 
     int y=now.year();
+    String yer = String(y);    //converting each values into string
     int m=now.month();
+    String mnth = String(m);
     int d=now.day();
+    String dy = String(d);
     int h=now.hour();
+    String hr = String(h);
     int mi = now.minute();
+    String mint = String(mi);
     int s = now.second();
+    String secn = String(s);
 
-    int timed = 25;
+     
     
     float ACCurrentValue = readACCurrentValue(); //read AC Current Value
     String dataString = "";
@@ -87,10 +93,12 @@ void loop()
     File dataFile = SD.open("CTsensor.txt", FILE_WRITE);
     if (dataFile) 
     {
-    dataFile.println(dataString);
+    dataFile.println(dataString +"/"+yer+"/"+mnth+"/"+dy+"/"+hr+"/"+mint+"/"+secn);   // String addiction, seperation using "/"
     dataFile.close();
+   
     // print to the serial port too for cross verify. 
     Serial.println(dataString);
+ 
     }
   
   // if the file isn't open, show up an error:
